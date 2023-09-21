@@ -150,9 +150,9 @@ export default async function PokemonPage({
 
       {/* stats */}
       <div className="flex flex-col items-center justify-between mt-10 text-[14px] font-medium">
-        {pokemonObject.stats.map((stat: any) => {
+        {pokemonObject.stats.map((stat: any, index : any) => {
           return (
-              <div className="flex items-center py-1 justify-center">
+              <div key={index} className="flex items-center py-1 justify-center">
                 <p className="w-[8rem] font-bold">{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}</p>
 
                 <div className={`w-[2.5rem] h-[2.5rem] mt-0.5 flex items-center justify-center rounded-full  
