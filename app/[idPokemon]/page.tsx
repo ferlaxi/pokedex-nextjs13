@@ -150,23 +150,52 @@ export default async function PokemonPage({
 
       {/* stats */}
       <div className="flex flex-col items-center justify-between mt-10 text-[14px] font-medium">
-        {pokemonObject.stats.map((stat: any, index : any) => {
+        {pokemonObject.stats.map((stat: any, index: any) => {
           return (
-              <div key={index} className="flex items-center py-1 justify-center">
-                <p className="w-[8rem] font-bold">{stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}</p>
+            <>
+              <div
+                key={index}
+                className="flex items-center py-1 justify-center"
+              >
+                <p className="w-[8rem] font-bold">
+                  {stat.stat.name.charAt(0).toUpperCase() +
+                    stat.stat.name.slice(1)}
+                </p>
 
-                <div className={`w-[2.5rem] h-[2.5rem] mt-0.5 flex items-center justify-center rounded-full  
-                    ${stat.base_stat < 29 ? `bg-red-500` : '' }
-                    ${stat.base_stat >= 30 && stat.base_stat <= 59 ? `bg-orange-500` : '' }
-                    ${stat.base_stat >= 60 && stat.base_stat < 89 ? `bg-yellow-300` : '' }
-                    ${stat.base_stat >= 90 && stat.base_stat < 119 ? `bg-green-400` : '' }
-                    ${stat.base_stat >= 120 && stat.base_stat < 149 ? `bg-green-600` : '' }
-                    ${stat.base_stat >= 150 && stat.base_stat <= 255 ? `bg-blue-500` : '' }
-                    `}>
-                      <div className="font-bold">{stat.base_stat}</div>
+                <div
+                  className={`w-[2.5rem] h-[2.5rem] mt-0.5 flex items-center justify-center rounded-full  
+                    ${stat.base_stat < 29 ? `bg-red-500` : ""}
+                    ${
+                      stat.base_stat >= 30 && stat.base_stat <= 59
+                        ? `bg-orange-500`
+                        : ""
+                    }
+                    ${
+                      stat.base_stat >= 60 && stat.base_stat < 89
+                        ? `bg-yellow-300`
+                        : ""
+                    }
+                    ${
+                      stat.base_stat >= 90 && stat.base_stat < 119
+                        ? `bg-green-400`
+                        : ""
+                    }
+                    ${
+                      stat.base_stat >= 120 && stat.base_stat < 149
+                        ? `bg-green-600`
+                        : ""
+                    }
+                    ${
+                      stat.base_stat >= 150 && stat.base_stat <= 255
+                        ? `bg-blue-500`
+                        : ""
+                    }
+                    `}
+                >
+                  <div className="font-bold">{stat.base_stat}</div>
                 </div>
-
               </div>
+            </>
           );
         })}
       </div>
